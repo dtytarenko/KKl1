@@ -1,9 +1,26 @@
 .stats{
-    background-color: #282828;
+    background-image: url('../img/photos/stats__bg_tablet.svg');
+    background-size: cover;
+
+    @include tablet{
+        padding-top: 80px;
+    }
+}
+
+.stats__list{
+    @include tablet{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
 
 .stats__list_item{
     text-align: center;
+
+    @include tablet{
+        max-width: calc(50% - 40px);
+    }
 
     &:not(:last-of-type){
         margin-bottom: 37px;
@@ -23,6 +40,13 @@
     position: relative;
     margin-bottom: 11px;
 
+    @include tablet{
+        padding-top: 30px;
+        font-size: 50px;
+        text-align: left;
+        margin-bottom: 14px;
+    }
+
     &::before{
         content: '';
         display: block;
@@ -33,6 +57,11 @@
         width: 40px;
         height: 5px;
         background-image: linear-gradient(to right, #b1f9c6 0%, #4ee482 100%);
+
+        @include tablet{
+            left: 0;
+            transform: initial;
+        }
     }
 
     &::after{
@@ -54,7 +83,14 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 14px;
-    letter-spacing: 2.8px
+    letter-spacing: 2.8px;
+
+    @include tablet{
+        font-size: 16px;
+        text-align: left;
+        letter-spacing: 3.2px;
+        margin-bottom: 18px;
+    }
 }
 
 .stats__list_item_descr{
@@ -66,4 +102,10 @@
     letter-spacing: normal;
     line-height: 22px;
     text-align: center;
+
+    @include tablet{
+        font-size: 16px;
+        line-height: 25px;
+        text-align: left;
+    }
 }

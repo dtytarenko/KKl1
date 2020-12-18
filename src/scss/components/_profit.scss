@@ -31,3 +31,11 @@
         background-image: url('../img/icons/29-icon.svg');
     }
 }
+
+.profit__btn{
+    @include tablet{
+        max-width: 260px;
+        min-width: 260px;
+        margin: 0 auto;
+    }
+}

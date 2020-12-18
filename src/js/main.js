@@ -98,7 +98,7 @@ Swiper.use([Navigation, Pagination]);
                 grabCursor: true,
                 mousewheelControl: true,
                 keyboardControl: true,
-                spaceBetween: 100,
+                spaceBetween: 20,
                 autoplay: {
                     delay: 5000,
                 },
@@ -112,9 +112,22 @@ Swiper.use([Navigation, Pagination]);
         });
     };
 
+    const faq = () => {
+        let faqItem = document.getElementsByClassName("faq__list_item");
+
+        if (typeof (faqItem) != "undefined" && faqItem != null) {
+            for (let i = 0; i < faqItem.length; i++) {
+                faqItem[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                });
+            }
+        }
+    };
+
     stickyHeader();
     langList();
     showGalleryImages();
     Slider();
+    faq();
 })();
 

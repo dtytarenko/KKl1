@@ -4,6 +4,16 @@
     height: 40px;
     background-color: #261449;
 
+    @include tablet{
+        justify-content: flex-end;
+        background-color: transparent;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        z-index: 90;
+    }
+
     .header__logo {
         display: none;
     }
@@ -23,6 +33,13 @@
             color: #b1f9c6;
             background-color: #261449;
             width: 26%;
+            
+            @include tablet{
+                max-width: 110px;
+                border-radius: 20px;
+                border: 2px solid #b1f9c6;
+                margin-right: 5px;
+            }
         }
 
         &-reg{
@@ -30,6 +47,12 @@
             background-image: linear-gradient(to right, #b1f9c6 0%, #4ee482 100%);
             min-width: 150px;
             width: 47%;
+
+            @include tablet{
+                border-radius: 20px;
+                max-width: 150px;
+                margin-right: 5px;
+            }
         }
     }
 
@@ -46,6 +69,13 @@
         color: #ffffff;
         text-transform: uppercase;
         letter-spacing: 0.75px;
+
+        @include tablet{
+            border-radius: 20px;
+            max-width: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-right: 10px;
+        }
 
         &:active{
             opacity: 1;
@@ -88,6 +118,10 @@
             height: 19px;
             background-image: url('../img/icons/menu.svg');
             @include bgIcons;
+        }
+
+        @include tablet{
+            margin-right: 20px;
         }
     }
 }

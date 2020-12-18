@@ -1,0 +1,13 @@
+.events__list_item{
+    box-shadow: 0 20px 35px rgba(1,1,1,.1);
+}
+
+.events__list{
+    .events__list_item_date.defaultSlider__list_item_date{
+        align-items: flex-start;
+
+        &::before{
+            margin-top: 10px;
+        }
+    }
+}

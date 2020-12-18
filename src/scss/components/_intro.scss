@@ -1,31 +1,51 @@
 .intro{
     position: relative;
-    background-color: #282828;
+    background-image: url('../img/photos/intro__bg_tablet.svg');
+    background-size: cover;
+    background-position: -140px 0px;
+    background-repeat: no-repeat;
 
-    // &::before{
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     background-image: url('../img/photos/before.png');
-    //     min-width: 768px;
-    //     height: 100%;
-    //     min-height: 942px;
-    // }
+    @media screen and (min-width: 350px){
+        background-position: -80px 0px;
+    }
+
+    @media screen and (min-width: 380px){
+        background-position: -40px 0px;
+    }
+
+    @media screen and (min-width: 420px){
+        background-position: 0px 0px;
+    }
+
+    @include tablet{
+        padding-top: 50px;
+    }
 
     .container{
+        padding-bottom: 0px;
 
+        @include tablet{
+            align-items: flex-start;
+        }
     }
 
     .intro__logo{  
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 220px;
+        height: 81px;
+        margin: 0 auto 40px;
+        
+        @include tablet{
+            margin-left: 0;
+            margin-bottom: 85px;
+            width: 330px;
+            height: 122px;
+        }
         
         .intro__logo_img{
-            max-width: 220px;
-            max-height: 81px;
-            margin-bottom: 40px;
+            width: 100%;
         }
     }
 
@@ -43,6 +63,16 @@
         position: relative;
         margin-bottom: 23px;
 
+        @include tablet{
+            color: #ffffff;
+            font-size: 50px;
+            line-height: 50px;
+            text-align: left;
+            letter-spacing: 1.25px;
+            white-space: initial;
+            margin-bottom: 100px;
+        }
+
         &::after{
             display: block;
             position: absolute;
@@ -54,6 +84,11 @@
             height: 10px;
             background-color: #601472;
             background-image: linear-gradient(to right, #b1f9c6 0%, #4ee482 100%);
+
+            @include tablet{
+                left: 0;
+                transform: initial;
+            }
         }
     }
 
@@ -66,9 +101,22 @@
         text-align: center;
         letter-spacing: 0.9px;
         margin-bottom: 30px;
+
+        @include tablet{
+            font-size: 24px;
+            font-weight: 400;
+            text-align: left;
+            letter-spacing: 1.2px;
+            margin-bottom: 85px;
+        }
     }
 
     .intro__button {
         margin-bottom: 130px;
+
+        @include tablet{
+            margin-bottom: 241px;
+            min-width: 240px;
+        }
     }
 }

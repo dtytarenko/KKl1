@@ -2,12 +2,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
 }
 
 .gallery__list_item{
     display: none;
     width: calc(50% - 5px);
     margin-bottom: 10px;
+
+    @include tablet{
+        width: initial;
+    }
 
     &.visible{
         display: block;
