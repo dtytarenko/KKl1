@@ -23,7 +23,7 @@ const notify = require("gulp-notify");
 function browserSync(done) {
   browsersync.init({
     server: {
-      baseDir: "./_site/"
+      baseDir: "./dist/"
     },
     port: 3000
   });
@@ -38,7 +38,7 @@ function browserSyncReload(done) {
 
 // Clean assets
 function clean() {
-  return del(["./_site/"]);
+  return del(["./dist/"]);
 }
 
 // Optimize Images
@@ -52,7 +52,7 @@ function images() {
         imagemin.optipng({ optimizationLevel: 5 }),
       ])
     )
-    .pipe(gulp.dest("./_site/assets/img"));
+    .pipe(gulp.dest("./dist/assets/img"));
 }
 
 // CSS task
@@ -66,10 +66,9 @@ function css() {
       })(err);
     }}))
     .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(gulp.dest("./_site/assets/css/"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(gulp.dest("./_site/assets/css/"))
+    .pipe(gulp.dest("./dist/css/"))
     .pipe(browsersync.stream());
 }
 
@@ -91,7 +90,7 @@ function scripts() {
       .pipe(plumber())
       .pipe(webpackstream(webpackconfig, webpack))
       // folder only, filename is specified in webpack config
-      .pipe(gulp.dest("./_site/assets/js/"))
+      .pipe(gulp.dest("./dist/assets/js/"))
       .pipe(browsersync.stream())
   );
 }
@@ -104,7 +103,7 @@ function jekyll() {
 function html(){
   return (
     gulp.src("src/views/*.html")
-    .pipe(gulp.dest("./_site"))
+    .pipe(gulp.dest("./dist"))
     .pipe(browsersync.stream())
   );
 }
