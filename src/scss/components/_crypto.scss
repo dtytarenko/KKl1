@@ -1,0 +1,39 @@
+.crypto{
+    .container{
+        position: relative;
+        padding-bottom: 223px;
+    }
+}
+
+.crypto__list{
+    &::after{
+        content: '';
+    }
+}
+
+.crypto__list_item{
+    &:nth-of-type(1)::before{
+        background-image: url('../img/icons/20-icon.svg');
+    }
+
+    &:nth-of-type(2)::before{
+        background-image: url('../img/icons/21-icon.svg');
+    }
+
+    &:nth-of-type(3)::before{
+        background-image: url('../img/icons/22-icon.svg');
+    }
+
+    &:nth-of-type(4)::before{
+        background-image: url('../img/icons/23-icon.svg');
+    }
+}
+
+.crypto__img{
+    min-height: 253px;
+    min-width: 494px;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    transform: translateX(-50%);
+}

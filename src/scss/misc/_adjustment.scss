@@ -17,6 +17,10 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
+img{
+  max-width: 100%;
+}
+
 .container {
   padding-top: 30px;
   padding-bottom: 60px;
@@ -183,4 +187,66 @@ body {
 
 .defaultList__item_text{
   text-align: center;
+}
+
+.aboutUs__list{
+  margin-bottom: 30px;
+}
+
+.aboutUs__list_item,
+.crypto__list_item{
+  display: flex;
+  align-items: center;
+  color: #111111;
+  font-family: $MontserratSemiBold;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+
+  &:not(:last-of-type){
+      margin-bottom: 20px;
+  }
+  
+  &::before{
+      content: '';
+      display: block;
+      min-width: 60px;
+      min-height: 60px;
+      max-width: 60px;
+      max-height: 60px;
+      margin-right: 10px;
+      @include bgIcons;
+  }
+}
+
+.swiper-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  width: 24px;
+  height: 24px;
+  border: 1px solid #261449;
+  background-color: #ffffff;
+
+  &::before{
+    display: block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #261449;
+    border-radius: 100%;
+  }
 }

@@ -1,5 +1,5 @@
-import Swiper, { Navigation } from "swiper";
-Swiper.use([Navigation]);
+import Swiper, { Navigation, Pagination } from "swiper";
+Swiper.use([Navigation, Pagination]);
 
 (() => {
     const header = document.getElementById("header");
@@ -67,8 +67,20 @@ Swiper.use([Navigation]);
             const galleryItems = document.getElementsByClassName("gallery__list_item");
 
             function showImages(){
-                for (let i = 0, len = galleryItems.length; i < len; i++){
-                    galleryItems[i].classList.add("visible");
+                if (galleryBtn.classList.contains("show")){
+                    for (let i = 4, len = galleryItems.length; i < len; i++){
+                        galleryItems[i].classList.add("visible");
+                    }
+
+                    galleryBtn.innerHTML = "Скрыть фото";
+                    galleryBtn.classList.remove("show");
+
+                } else {
+                    for (let i = 4, len = galleryItems.length; i < len; i++){
+                        galleryItems[i].classList.remove("visible");
+                    }
+                    galleryBtn.innerHTML = "больше фото";
+                    galleryBtn.classList.add("show");
                 }
             }
 
@@ -77,8 +89,32 @@ Swiper.use([Navigation]);
         });
     };
 
+    const Slider = () => {
+        document.addEventListener("DOMContentLoaded", function () {
+            /* eslint-disable no-unused-vars */
+            const mySwiper = new Swiper(".swiper-container", {
+                loop: false,
+                speed: 1000,
+                grabCursor: true,
+                mousewheelControl: true,
+                keyboardControl: true,
+                spaceBetween: 100,
+                autoplay: {
+                    delay: 5000,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "bullets",
+                    clickable: true
+                },
+            });
+            /* eslint-enable no-unused-vars */
+        });
+    };
+
     stickyHeader();
     langList();
     showGalleryImages();
+    Slider();
 })();
 

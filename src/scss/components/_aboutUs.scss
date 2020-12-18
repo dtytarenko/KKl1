@@ -1,34 +1,4 @@
-.aboutUs__list{
-    margin-bottom: 30px;
-}
-
 .aboutUs__list_item{
-    display: flex;
-    align-items: center;
-    color: #111111;
-    font-family: $MontserratSemiBold;
-    font-size: 15px;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: normal;
-    line-height: normal;
-    text-align: left;
-
-    &:not(:last-of-type){
-        margin-bottom: 20px;
-    }
-    
-    &::before{
-        content: '';
-        display: block;
-        min-width: 60px;
-        min-height: 60px;
-        max-width: 60px;
-        max-height: 60px;
-        margin-right: 10px;
-        @include bgIcons;
-    }
-
     &:nth-of-type(1)::before{
         background-image: url('../img/icons/6-icon-1.svg');
     }
