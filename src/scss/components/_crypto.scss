@@ -58,4 +58,18 @@
         left: 50%;
         bottom: 40px;
     }
+
+    @include desktop{
+        top: -70px;
+        left: 0px;
+        transform: translateX(0);
+        bottom: inherit;
+        min-width: 1361px;
+        min-height: 698px;
+    }
+
+    @include designDesktop{
+        top: -25px;
+        left: 167px;
+    }
 }

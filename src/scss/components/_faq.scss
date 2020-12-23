@@ -30,6 +30,12 @@
         background-image: url('../img/icons/faq__before.png');
     }
 
+    @media screen and (min-width: 630px){
+        &::after{
+            top: 8px;
+        }
+    }
+
     .faq__list_item_title{
         color: #261449;
         font-family: $MontserratBold;
@@ -51,6 +57,14 @@
             width: 40px;
             height: 3px;
             @include transition;
+        }
+
+        @include desktop{
+            font-size: 16px;
+        }
+
+        @include designDesktop{
+            font-size: 20px;
         }
     }
 
@@ -75,6 +89,11 @@
         .faq__list_item_title{
             padding-bottom: 10px;
             margin-bottom: 15px;
+
+            @include desktop{
+                margin-bottom: 30px;
+                padding-bottom: 17px;
+            }
 
             &::after{
                 background-image: linear-gradient(to right, #b1f9c6 0%, #4ee482 100%);

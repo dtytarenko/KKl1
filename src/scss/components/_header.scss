@@ -1,21 +1,55 @@
 .header{
+    position: fixed;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
     display: flex;
     max-height: 40px;
     height: 40px;
     background-color: #261449;
 
     @include tablet{
-        justify-content: flex-end;
         background-color: transparent;
         position: absolute;
-        top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        top: 0;
         left: 0;
         width: 100%;
         z-index: 90;
+        max-height: 60px;
+        height: 60px;
+    }
+
+    @include desktop{
+        max-height: 75px;
+        height: 75px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     .header__logo {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        max-width: 420px;
+        @include transition;
+        @include dFlexJccAic;
+
+        @include tablet{
+            min-width: 97px;
+            min-height: 36px;
+            margin-right: auto;
+        }
+
+        @include desktop{
+            margin-right: 25px;
+            min-width: 136px;
+            min-height: 50px;
+        }
     }
 
     .header__btn {
@@ -40,6 +74,11 @@
                 border: 2px solid #b1f9c6;
                 margin-right: 5px;
             }
+
+            @include designDesktop {
+                max-width: 140px;
+                margin-right: 10px;
+            }
         }
 
         &-reg{
@@ -52,6 +91,11 @@
                 border-radius: 20px;
                 max-width: 150px;
                 margin-right: 5px;
+            }
+
+            @include designDesktop{
+                max-width: 200px;
+                margin-right: 10px;
             }
         }
     }
@@ -73,8 +117,16 @@
         @include tablet{
             border-radius: 20px;
             max-width: 40px;
+            max-height: 40px;
             background: rgba(255, 255, 255, 0.1);
             margin-right: 10px;
+        }
+
+        @include desktop{
+            margin-right: 0;
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
         }
 
         &:active{
@@ -113,6 +165,10 @@
         min-width: 50px;
         @include dFlexJccAic;
 
+        @include desktop{
+            display: none;
+        }
+
         .header__mobBtn_icon{
             width: 24px;
             height: 19px;
@@ -128,4 +184,125 @@
 
 .default-state .header .header__logo{
     display: none;
+}
+
+.header__container{
+    display: flex;
+    width: 100%;
+
+    @include tablet{
+        justify-content: flex-end;
+        max-width: calc(100% - 80px);
+        margin: 0 auto;
+    }
+
+    @include desktop{
+        width: 100%;
+        max-width: 1049px;
+        margin-left: auto;
+    }
+
+    @include designDesktop {
+        max-width: 1400px;
+    }
+}
+
+.header__nav{
+    position: absolute;
+    top: 0;
+    right: -20px;
+    transform: translateX(150%);
+    max-width: 420px;
+    @include transition;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 50px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #261449;
+    
+    &.active{
+        transform: translateX(0);
+        z-index: 101;
+    }
+
+    @include desktop{
+        @include dFlexJccAic;
+        margin-right: 20px;
+        position: relative;
+        max-width: 600px;
+        min-height: initial;
+        padding-top: 0;
+        padding-left: 0;
+        flex-direction: row;
+        align-items: center;
+        transform: translateX(0);
+        background-color: transparent;
+        right: 0;
+    }
+
+    @include designDesktop{
+        max-width: 742px;
+    }
+}
+
+.header__nav_item{
+    color: #ffffff;
+    font-family: $MontserratBold;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    background-image: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &:not(:last-of-type){
+        margin-bottom: 15px;
+    }
+
+    @include desktop{
+        font-size: 14px;
+        line-height: 24px;
+        &:not(:last-of-type){
+            margin-right: 15px;
+            margin-bottom: 0;
+        }
+    }
+
+    @include designDesktop {
+        font-size: 16px;
+        margin-right: 25px;
+    }
+}
+
+.header__mobBtn-close{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    color: #ffffff;
+    font-family: $MontserratBold;
+    z-index: 110;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    @include transition;
+    opacity: 0;
+
+    &.active{
+        opacity: 1;
+        display: flex;
+        transform: initial;
+        
+    }
+}
+
+
+.scroll-up .header__logo {
+    opacity: 1;
+    visibility: visible;
 }

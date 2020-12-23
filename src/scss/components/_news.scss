@@ -1,8 +1,44 @@
 .news{
-    background-color: #f9f9f9;
+    @include desktop{
+        padding-top: 125px;
+    }
 }
 
+.news__list {
+    @include tablet{
+        max-width: 690px;
+    }
+
+    @include desktop{
+        max-width: inherit;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 .news__list_item{
     box-shadow: 0 20px 35px rgba(1,1,1,.1);
-}
+    max-width: 280px;
 
+    @include tablet{
+        min-width: 330px;
+        max-width: 330px;
+    }
+
+    @include desktop{
+        min-width: 510px;
+        max-width: 510px;
+        visibility: hidden;
+    }
+
+    @include designDesktop{
+        max-width: 680px;
+        min-width: 680px;
+    }
+
+    &.swiper-slide-active,
+    &.swiper-slide-next{
+        @include desktop{
+            visibility: visible;
+        }
+    }
+}

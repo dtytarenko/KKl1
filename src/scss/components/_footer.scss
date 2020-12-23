@@ -7,6 +7,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include desktop{
+            padding-top: 45px;
+            padding-bottom: 45px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 25px 25px;
+            align-items: flex-start;
+            justify-items: center;
+            grid-row-gap: 21px;
+        }
     }
 }
 
@@ -15,6 +26,16 @@
     height: 50px;
     display: block;
     margin-bottom: 25px;
+
+    @include desktop{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-bottom: 0;
+        width: 193px;
+        height: 70px;
+    }
 }
 
 .footer__logo_img {
@@ -32,6 +53,12 @@
     letter-spacing: 0.7px;
     line-height: normal;
     margin-bottom: 11px;
+    
+    @include desktop{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        justify-self: flex-start;
+    }
 }
 
 .footer__info {
@@ -46,6 +73,17 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 23px;
+
+    @include tablet{
+        max-width: initial;
+        margin-bottom: 27px;
+        
+    }
+
+    @include desktop{
+        justify-self: flex-start;
+        margin-bottom: 0;
+    }
 }
 
 .footer__company {
@@ -60,6 +98,15 @@
     text-align: left;
     letter-spacing: 0.35px;
     text-decoration: none;
+
+    @include desktop{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        justify-self: flex-end;
+        align-items: flex-end;
+    }
 
     .footer__company_img{
         margin-top: 9px;

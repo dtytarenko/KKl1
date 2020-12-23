@@ -1,7 +1,21 @@
-.stats{
-    background-image: url('../img/photos/stats__bg_tablet.svg');
+.infoStats{
+    background-image: url('../img/photos/infoStats.svg');
+    background-position: center right;
+    background-repeat: no-repeat;
     background-size: cover;
 
+    @include tablet{
+        background-image: url("../img/photos/infoStats__tablet.svg");
+    }
+
+    @include desktop{
+        background-image: url("../img/photos/infoStats__desktop.svg");
+        background-position: center center;
+        padding-top: 167px;
+    }
+}
+
+.stats{
     @include tablet{
         padding-top: 80px;
     }
@@ -13,6 +27,8 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
+    
 }
 
 .stats__list_item{
@@ -22,8 +38,20 @@
         max-width: calc(50% - 40px);
     }
 
+    @include desktop{
+        max-width: 205px;     
+    }
+
+    @include designDesktop{
+        max-width: 300px;
+    }
+
     &:not(:last-of-type){
         margin-bottom: 37px;
+        
+        @include desktop{
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -45,6 +73,11 @@
         font-size: 50px;
         text-align: left;
         margin-bottom: 14px;
+    }
+
+    @include designDesktop{
+        font-size: 60px;
+        letter-spacing: 3px;
     }
 
     &::before{
@@ -91,6 +124,11 @@
         letter-spacing: 3.2px;
         margin-bottom: 18px;
     }
+
+    @include designDesktop{
+        font-size: 18px;
+        letter-spacing: 3.6px;
+    }
 }
 
 .stats__list_item_descr{
@@ -107,5 +145,10 @@
         font-size: 16px;
         line-height: 25px;
         text-align: left;
+    }
+
+    @include designDesktop{
+        font-size: 18px;
+        line-height: 25px;
     }
 }

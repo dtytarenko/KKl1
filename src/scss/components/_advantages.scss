@@ -1,11 +1,4 @@
-.advantages{
-    background-color: #282828;
-}
-
-.advantages__list{
-}
-
-.advantages__list_item {
+.advantages__list_item.defaultList__item {
     &:nth-of-type(1)::before{
         background-image: url('../img/icons/14-icon.svg');
     }
@@ -28,5 +21,24 @@
 
     &:nth-of-type(6)::before{
         background-image: url('../img/icons/19-icon.svg');
+    }
+
+    @include desktop{
+        max-width: calc(33% - 40px);
+
+        &:not(:last-of-type){
+            margin-bottom: 30px;
+        }
+
+        &:nth-child(n+4){
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.advantages{
+    @include desktop{
+        position: relative;
+        top: 117px;
     }
 }

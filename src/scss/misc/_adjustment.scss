@@ -21,6 +21,41 @@ img {
   max-width: 100%;
 }
 
+.scroll-up .header {
+  transform: translate3d(0, 0%, 0);
+  position: fixed;
+  background-color: #261449;
+}
+
+.scroll-down .header {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-down .header.sticky.active{
+  transform: translate3d(0, 0%, 0);
+}
+
+.overlay{
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-200%);
+}
+
+.overlay{
+  z-index: 60;
+
+  &.active{
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 14, 14, 0.6);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 .container {
   padding-top: 30px;
   padding-bottom: 60px;
@@ -29,6 +64,19 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include tablet{
+    max-width: calc(100% - 80px);
+  }
+
+  @include desktop{
+    max-width: 1050px;
+    padding-top: 60px;
+  }
+
+  @include designDesktop {
+    max-width: 1400px;
+  }
 }
 
 .defaultBtn {
@@ -63,6 +111,10 @@ img {
     font-size: 15px;
     line-height: 24px;
   }
+
+  @include designDesktop{
+    font-size: 16px;
+  }
 }
 
 .section__title {
@@ -76,7 +128,12 @@ img {
 
   @include tablet{
     font-size: 36px;
-    line-height: 24px;   
+    line-height: 24px;
+  }
+
+  @include designDesktop{
+    font-size: 48px;
+    line-height: 48px;
   }
 
   &::before {
@@ -92,6 +149,15 @@ img {
     margin-bottom: 24px;
     color: #ffffff;
     text-align: center;
+
+    @include tablet{
+      padding-bottom: 27px;
+    }
+
+    @include designDesktop{
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+    }
 
     &::before {
       content: "";
@@ -111,7 +177,17 @@ img {
     color: #261449;
 
     @include tablet{
+      margin-bottom: 28px;
+    }
+
+    @include desktop{
       margin-bottom: 22px;
+      padding-top: 18px;
+    }
+
+    @include designDesktop {
+      margin-bottom: 40px;
+      padding-top: 20px;
     }
 
     &::before {
@@ -136,9 +212,23 @@ img {
     margin-bottom: 36px;
   }
 
+  @include desktop{
+    margin-bottom: 56px;
+  }
+
+  @include designDesktop{
+    margin-bottom: 75px;
+    font-size: 24px;
+    line-height: 34px;
+  }
+
   &-left {
     color: #6e7694;
     text-align: left;
+
+    @include designDesktop{
+      padding-right: 445px;
+    }
   }
 
   &-center {
@@ -255,6 +345,15 @@ img {
   line-height: normal;
   text-align: left;
 
+  @include desktop{
+    font-size: 16px;
+}
+
+  @include designDesktop{
+    font-size: 18px;
+  }
+  
+
   &:not(:last-of-type) {
     margin-bottom: 20px;
   }
@@ -268,12 +367,44 @@ img {
     max-height: 60px;
     margin-right: 10px;
     @include bgIcons;
+
+    @include desktop{
+      margin-right: 20px;
+    }
+
+    @include designDesktop{
+      min-width: 80px;
+      min-height: 80px;
+      max-width: 80px;
+      max-height: 80px;
+    }
   }
 }
 
-.swiper-container {
+.swiper-container,
+.swiper-container-multiple {
   max-width: 280px;
+  margin: 0 auto;
+  
+  @include tablet{
+    max-width: 690px;
+  }
+
+  @include desktop{
+    max-width: 1070px;
+    width: 100%;
+  }
+
+  @include desktop{
+    max-width: 1400px;
+  }
 }
+
+.swiper-container-multiple{
+  overflow: visible;
+
+}
+
 
 .defaultSlider__list {
   margin-bottom: 18px;
@@ -283,18 +414,10 @@ img {
     border-radius: 30px;
     background-color: #ffffff;
     max-width: 280px;
-    overflow: hidden;
     position: relative;
 
-    &::before {
-      content: "";
-      width: 100%;
-      height: 10px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #ffffff;
-      z-index: -1;
+    @include tablet{
+      max-width: initial;
     }
   }
 
@@ -312,6 +435,11 @@ img {
     width: 100%;
     object-fit: cover;
     z-index: 2;
+
+    @include desktop{
+      max-height: 240px;
+      margin-bottom: 30px;
+    }
   }
 
   .defaultSlider__list_item_title {
@@ -324,6 +452,18 @@ img {
     letter-spacing: 0.35px;
     line-height: normal;
     margin-bottom: 20px;
+
+    @include desktop{
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+    }
+
+    @include designDesktop{
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      margin-bottom: 36px;
+    }
   }
 
   .defaultSlider__list_item_date {
@@ -346,6 +486,10 @@ img {
       background-image: linear-gradient(to right, #b1f9c6 0%, #4ee482 100%);
       width: 40px;
       height: 3px;
+    }
+
+    @include desktop{
+      margin-bottom: 32px;
     }
   }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="EN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +12,42 @@
 
 <body>
     <header class="header" id="header">
-        <a href="/" class="header__logo">
-            <img src="./img/icons/logo.svg" alt="logo" class="header__logo_img">
-        </a>
+        <div class="header__container">
+            <a href="/" class="header__logo">
+                <img src="../img/icons/logo.svg" alt="logo" class="header__logo_img">
+            </a>
 
-        <a href="#" class="header__btn header__btn-login">войти</a>
-        <a href="#" class="header__btn header__btn-reg">регистрация</a>
+            <nav class="header__nav" id="header__nav" aria-label="Навигация по сайту">
+                <button class="header__nav_item" id="header__nav_aboutUs" aria-label="О нас">О нас</button>
+                <button class="header__nav_item" id="header__nav_gallery" aria-label="Фотогалерея">Фотогалерея</button>
+                <button class="header__nav_item" id="header__nav_infoStats"
+                    aria-label="Возможности">Возможности</button>
+                <button class="header__nav_item" id="header__nav_reviews" aria-label="Отзывы">Отзывы</button>
+                <button class="header__nav_item" id="header__nav_news" aria-label="Новости">Новости</button>
+                <button class="header__nav_item" id="header__nav_faq" aria-label="FAQ">FAQ</button>
+                <button class="header__nav_item" id="header__nav_events" aria-label="Мероприятия">Мероприятия</button>
+            </nav>
 
-        <div class="header__langListWrap" id="header__langListWrap">
-            <p class="header__langList_active">RU</p>
-            <ul class="header__langList">
-                <li class="header__langList_item">
-                    <a href="#" class="header__langList_link">RU</a>
-                </li>
-                <li class="header__langList_item">
-                    <a href="#" class="header__langList_link">EN</a>
-                </li>
-            </ul>
-        </div>
+            <a href="#" class="header__btn header__btn-login">войти</a>
+            <a href="#" class="header__btn header__btn-reg">регистрация</a>
 
-        <div class="header__mobBtn defaultBtn">
-            <div class="header__mobBtn_icon"></div>
+            <div class="header__langListWrap" id="header__langListWrap">
+                <p class="header__langList_active">RU</p>
+                <ul class="header__langList">
+                    <li class="header__langList_item">
+                        <a href="#" class="header__langList_link">RU</a>
+                    </li>
+                    <li class="header__langList_item">
+                        <a href="#" class="header__langList_link">EN</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header__mobBtn defaultBtn" id="header__menu_btn-mob">
+                <div class="header__mobBtn_icon"></div>
+            </div>
+
+            <div class="header__mobBtn-close" id="header__mobBtn-close">X</div>
         </div>
     </header>
 
@@ -52,10 +68,14 @@
                 </p>
 
                 <a href="#" class="intro__button defaultBtn defaultBtn-green" rel="button">сделать первый шаг</a>
+
+                <button class="intro__button-scroll" id="intro__button-scroll">
+                    <span>scroll</span>
+                </button>
             </div>
         </section>
 
-        <section class="aboutUs">
+        <section class="aboutUs" id="aboutUs">
             <div class="container">
                 <h2 class="aboutUs__title section__title section__title-purple">Кто такие Crypto
                     Kings?
@@ -85,91 +105,106 @@
                     </li>
                 </ul>
 
-                <a href="#" class="aboutUs__button defaultBtn defaultBtn-green">присоедениться</a>
+                <a href="#" class="aboutUs__button defaultBtn defaultBtn-green">присоедениться <span>к Crypto Kings</span></a>
 
                 <div class="aboutUs__video">
-
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gdPfHkk-ZFg" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
-        <section class="stats">
+        <section class="infoStats" id="infoStats">
             <div class="container">
-                <ul class="stats__list">
-                    <li class="stats__list_item">
-                        <p class="stats__list_item_title">1370</p>
-                        <p class="stats__list_item_subtitle">партнеров</p>
-                        <p class="stats__list_item_descr">В нашей команде Crypto Kings</p>
-                    </li>
-                    <li class="stats__list_item">
-                        <p class="stats__list_item_title">10</p>
-                        <p class="stats__list_item_subtitle">лет опыта</p>
-                        <p class="stats__list_item_descr">Которым мы готовы бесплатно делиться с нашими партнерами</p>
-                    </li>
-                    <li class="stats__list_item">
-                        <p class="stats__list_item_title">1 000</p>
-                        <p class="stats__list_item_subtitle">долларов</p>
-                        <p class="stats__list_item_descr">Средний чек партнеров команды Crypto Kings в месяц</p>
-                    </li>
-                    <li class="stats__list_item">
-                        <p class="stats__list_item_title">24/7</p>
-                        <p class="stats__list_item_subtitle">online</p>
-                        <p class="stats__list_item_descr">Бизнес работает без перерывов и выходных</p>
-                    </li>
-                </ul>
+                <article class="stats">
+
+                    <ul class="stats__list">
+                        <li class="stats__list_item">
+                            <p class="stats__list_item_title">1370</p>
+                            <p class="stats__list_item_subtitle">партнеров</p>
+                            <p class="stats__list_item_descr">В нашей команде Crypto Kings</p>
+                        </li>
+                        <li class="stats__list_item">
+                            <p class="stats__list_item_title">10</p>
+                            <p class="stats__list_item_subtitle">лет опыта</p>
+                            <p class="stats__list_item_descr">Которым мы готовы бесплатно делиться с нашими партнерами
+                            </p>
+                        </li>
+                        <li class="stats__list_item">
+                            <p class="stats__list_item_title">1 000</p>
+                            <p class="stats__list_item_subtitle">долларов</p>
+                            <p class="stats__list_item_descr">Средний чек партнеров команды Crypto Kings в месяц</p>
+                        </li>
+                        <li class="stats__list_item">
+                            <p class="stats__list_item_title">24/7</p>
+                            <p class="stats__list_item_subtitle">online</p>
+                            <p class="stats__list_item_descr">Бизнес работает без перерывов и выходных</p>
+                        </li>
+                    </ul>
+
+                </article>
+                <article class="advantages">
+
+                    <h2 class="advantages__title section__title section__title-white">Наши преимущества </h2>
+
+                    <p class="advantages__subtitle section__subtitle section__subtitle-center">Мы знаем как достичь
+                        финансовой независимости</p>
+
+                    <ul class="advantages__list defaultList">
+                        <li class="advantages__list_item defaultList__item">
+                            <p class="advantages__list_item_title defaultList__item_title">Универсальность</p>
+                            <p class="advantages__list_item_text defaultText defaultList__item_text">Вы можете
+                                заниматься
+                                этим независимо от
+                                возраста,
+                                рода деятельности и места жительства</p>
+                        </li>
+                        <li class="advantages__list_item defaultList__item">
+                            <p class="advantages__list_item_title defaultList__item_title">Бесплатное обучение</p>
+                            <p class="advantages__list_item_text defaultText defaultList__item_text">Профессиональное
+                                обучение
+                                интернет-предпринимательству от ТОП лидеров команды
+                                Crypto Kings</p>
+                        </li>
+                        <li class="advantages__list_item defaultList__item">
+                            <p class="advantages__list_item_title defaultList__item_title">Доход</p>
+                            <p class="advantages__list_item_text defaultText defaultList__item_text">Благодоря
+                                постоянному
+                                доходу,
+                                качество Вашей жизни стремительно повыситься</p>
+                        </li>
+                        <li class="advantages__list_item defaultList__item">
+                            <p class="advantages__list_item_title defaultList__item_title">Собственный бизнес</p>
+                            <p class="advantages__list_item_text defaultText defaultList__item_text">Постройте свой
+                                собственный бизнес в самой
+                                интересной и прибыльной нише 21 века.</p>
+                        </li>
+                        <li class="advantages__list_item defaultList__item">
+                            <p class="advantages__list_item_title defaultList__item_title">Сильное окружение</p>
+                            <p class="advantages__list_item_text defaultText defaultList__item_text">В команде ты будешь
+                                получать постоянную
+                                мотивацию
+                                и новые знания, которыми ты выйдешь на новый уровень.</p>
+                        </li>
+                        <li class="advantages__list_item defaultList__item">
+                            <p class="advantages__list_item_title defaultList__item_title">Новое мышление</p>
+                            <p class="advantages__list_item_text defaultText defaultList__item_text">Если ты хочешь
+                                достичь
+                                успеха в любом деле,
+                                необходимо работать и над своим подсознанием.</p>
+                        </li>
+                    </ul>
+                </article>
             </div>
         </section>
 
-        <section class="advantages">
-            <div class="container">
-                <h2 class="advantages__title section__title section__title-white">Наши преимущества </h2>
-
-                <p class="advantages__subtitle section__subtitle section__subtitle-center">Мы знаем как достичь
-                    финансовой независимости</p>
-
-                <ul class="advantages__list defaultList">
-                    <li class="advantages__list_item defaultList__item">
-                        <p class="advantages__list_item_title defaultList__item_title">Универсальность</p>
-                        <p class="advantages__list_item_text defaultText defaultList__item_text">Вы можете заниматься этим независимо от
-                            возраста,
-                            рода деятельности и места жительства</p>
-                    </li>
-                    <li class="advantages__list_item defaultList__item">
-                        <p class="advantages__list_item_title defaultList__item_title">Бесплатное обучение</p>
-                        <p class="advantages__list_item_text defaultText defaultList__item_text">Профессиональное обучение
-                            интернет-предпринимательству от ТОП лидеров команды
-                            Crypto Kings</p>
-                    </li>
-                    <li class="advantages__list_item defaultList__item">
-                        <p class="advantages__list_item_title defaultList__item_title">Доход</p>
-                        <p class="advantages__list_item_text defaultText defaultList__item_text">Благодоря постоянному доходу,
-                            качество Вашей жизни стремительно повыситься</p>
-                    </li>
-                    <li class="advantages__list_item defaultList__item">
-                        <p class="advantages__list_item_title defaultList__item_title">Собственный бизнес</p>
-                        <p class="advantages__list_item_text defaultText defaultList__item_text">Постройте свой собственный бизнес в самой
-                            интересной и прибыльной нише 21 века.</p>
-                    </li>
-                    <li class="advantages__list_item defaultList__item">
-                        <p class="advantages__list_item_title defaultList__item_title">Сильное окружение</p>
-                        <p class="advantages__list_item_text defaultText defaultList__item_text">В команде ты будешь получать постоянную
-                            мотивацию
-                            и новые знания, которыми ты выйдешь на новый уровень.</p>
-                    </li>
-                    <li class="advantages__list_item defaultList__item">
-                        <p class="advantages__list_item_title defaultList__item_title">Новое мышление</p>
-                        <p class="advantages__list_item_text defaultText defaultList__item_text">Если ты хочешь достичь успеха в любом деле,
-                            необходимо работать и над своим подсознанием.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="container">
                 <h2 class="gallery__title section__title section__title-purple">Страсно обогащаем нашу жизнь</h2>
 
-                <p class="gallery__subtitle section__subtitle section__subtitle-left">Смотрите наши фото и сами в этом убедитесь!</p>
+                <p class="gallery__subtitle section__subtitle section__subtitle-left">Смотрите наши фото и сами в этом
+                    убедитесь!</p>
 
                 <ul class="gallery__list">
                     <li class="gallery__list_item visible">
@@ -189,6 +224,18 @@
                     </li>
                     <li class="gallery__list_item">
                         <img src="./img/photos/galleryImage__6.jpg" alt="gallery__img" class="gallery__list_item_img">
+                    </li>
+                    <li class="gallery__list_item">
+                        <img src="./img/photos/galleryImage__7.jpg" alt="gallery__img" class="gallery__list_item_img">
+                    </li>
+                    <li class="gallery__list_item">
+                        <img src="./img/photos/galleryImage__8.jpg" alt="gallery__img" class="gallery__list_item_img">
+                    </li>
+                    <li class="gallery__list_item">
+                        <img src="./img/photos/galleryImage__7.jpg" alt="gallery__img" class="gallery__list_item_img">
+                    </li>
+                    <li class="gallery__list_item">
+                        <img src="./img/photos/galleryImage__8.jpg" alt="gallery__img" class="gallery__list_item_img">
                     </li>
                     <li class="gallery__list_item">
                         <img src="./img/photos/galleryImage__7.jpg" alt="gallery__img" class="gallery__list_item_img">
@@ -231,159 +278,187 @@
             </div>
         </section>
 
-        <section class="profit">
+        <section class="details">
             <div class="container">
-                <h2 class="profit__title section__title section__title-white">Что вы получите </h2>
+                <article class="profit" id="profit">
 
-                <p class="profit__subtitle section__subtitle section__subtitle-center">Став партнером команды
-                    Crypto Kings</p>
+                    <h2 class="profit__title section__title section__title-white">Что вы получите </h2>
 
-                <ul class="profit__list defaultList">
-                    <li class="profit__list_item defaultList__item">
-                        <p class="profit__list_item_title defaultList__item_title">Личный Web сайт</p>
-                        <p class="profit__list_item_text defaultText defaultList__item_text">
-                            Персональный сайт, который позволит быстро запуустить и развить свой бизнес
-                        </p>
-                    </li>
-                    <li class="profit__list_item defaultList__item">
-                        <p class="profit__list_item_title defaultList__item_title">Система обучения</p>
-                        <p class="profit__list_item_text defaultText defaultList__item_text">
-                            Фундаментальные знания и пошаговое обучение по продвижению и построению вашего бизнеса
-                        </p>
-                    </li>
-                    <li class="profit__list_item defaultList__item">
-                        <p class="profit__list_item_title defaultList__item_title">Бизес “Под Ключ”</p>
-                        <p class="profit__list_item_text defaultText defaultList__item_text">
-                            Вы зарабатываете в самой динамично развивающейся индустрии интернет бизнеса
-                        </p>
-                    </li>
-                    <li class="profit__list_item defaultList__item">
-                        <p class="profit__list_item_title defaultList__item_title">наставник</p>
-                        <p class="profit__list_item_text defaultText defaultList__item_text">
-                            Человек, который всегда поможет и ответить на все ваши вопросы, а также поможет дойти до
-                            первых результатов
-                        </p>
-                    </li>
-                </ul>
+                    <p class="profit__subtitle section__subtitle section__subtitle-center">Став партнером команды
+                        Crypto Kings</p>
 
-                <a href="#" class="profit__btn defaultBtn defaultBtn-green" rel="button">стать партнером</a>
-            </div>
-        </section>
-
-        <section class="reviews">
-            <div class="container">
-                <h2 class="reviews__title section__title section__title-white">Отзывы наших
-                    партнеров
-                </h2>
-
-                <div class="swiper-container">
-                    <ul class="reviews__list swiper-wrapper defaultSlider__list">
-                        <li class="reviews__item swiper-slide defaultSlider__list_item">
-                            <div class="reviews__item_info">
-                                <img src="./img/photos/review__1.jpg" alt="reviews avatar" width=70 height=70 class="reviews__item_info_img">
-                                <span class="reviews__item_info_name">Дмитрий
-                                    Казыкалевич</span>
-                                <span class="reviews__item_info_location">Украина, Киев</span>
-                            </div>
-    
-                            <div class="reviews__item_descr">
-                                <p class="reviews__item_descr_text defaultText">
-                                    В интернете развиваюсь с середины 2019 года. После чего познакомился с командой Crypto Kings, прошел уроки обучения личностного роста, аффирмации, и многое другое.
-                                    Следующим этапом в развитии стало активное построение своей структуры, развитие своего личного бренда, репутации. Благодарен команде Crypto Kings.
-                                </p>
-    
-                                <ul class="social__list">
-                                    <li class="social__list__item">
-                                        <a href="#" class="social__list__item_link" rel="noopener"></a>
-                                    </li>
-                                    <li class="social__list__item">
-                                        <a href="#" class="social__list__item_link" rel="noopener"></a>
-                                    </li>
-                                    <li class="social__list__item">
-                                        <a href="#" class="social__list__item_link" rel="noopener"></a>
-                                    </li>
-                                </ul>
-                            </div>
-    
-                            <a href="#" class="reviews__item_video">Смотреть видео отзыв</a>
+                    <ul class="profit__list defaultList">
+                        <li class="profit__list_item defaultList__item">
+                            <p class="profit__list_item_title defaultList__item_title">Личный Web сайт</p>
+                            <p class="profit__list_item_text defaultText defaultList__item_text">
+                                Персональный сайт, который позволит быстро запуустить и развить свой бизнес
+                            </p>
                         </li>
-                        <li class="reviews__item swiper-slide defaultSlider__list_item">
-                            <div class="reviews__item_info">
-                                <img src="./img/photos/review__1.jpg" alt="reviews avatar" width=70 height=70 class="reviews__item_info_img">
-                                <span class="reviews__item_info_name">Дмитрий
-                                    Казыкалевич</span>
-                                <span class="reviews__item_info_location">Украина, Киев</span>
-                            </div>
-    
-                            <div class="reviews__item_descr">
-                                <p class="reviews__item_descr_text defaultText">
-                                    В интернете развиваюсь с середины 2019 года. После чего познакомился с командой Crypto Kings, прошел уроки обучения личностного роста, аффирмации, и многое другое.
-                                    Следующим этапом в развитии стало активное построение своей структуры, развитие своего личного бренда, репутации. Благодарен команде Crypto Kings.
-                                </p>
-    
-                                <ul class="social__list">
-                                    <li class="social__list__item">
-                                        <a href="#" class="social__list__item_link" rel="noopener"></a>
-                                    </li>
-                                    <li class="social__list__item">
-                                        <a href="#" class="social__list__item_link" rel="noopener"></a>
-                                    </li>
-                                    <li class="social__list__item">
-                                        <a href="#" class="social__list__item_link" rel="noopener"></a>
-                                    </li>
-                                </ul>
-                            </div>
-    
-                            <a href="#" class="reviews__item_video">Смотреть видео отзыв</a>
+                        <li class="profit__list_item defaultList__item">
+                            <p class="profit__list_item_title defaultList__item_title">Система обучения</p>
+                            <p class="profit__list_item_text defaultText defaultList__item_text">
+                                Фундаментальные знания и пошаговое обучение по продвижению и построению вашего бизнеса
+                            </p>
+                        </li>
+                        <li class="profit__list_item defaultList__item">
+                            <p class="profit__list_item_title defaultList__item_title">Бизес “Под Ключ”</p>
+                            <p class="profit__list_item_text defaultText defaultList__item_text">
+                                Вы зарабатываете в самой динамично развивающейся индустрии интернет бизнеса
+                            </p>
+                        </li>
+                        <li class="profit__list_item defaultList__item">
+                            <p class="profit__list_item_title defaultList__item_title">наставник</p>
+                            <p class="profit__list_item_text defaultText defaultList__item_text">
+                                Человек, который всегда поможет и ответить на все ваши вопросы, а также поможет дойти до
+                                первых результатов
+                            </p>
                         </li>
                     </ul>
 
-                    <div class="swiper-pagination"></div>
-                </div>
+                    <a href="#" class="profit__btn defaultBtn defaultBtn-green" rel="button">стать партнером</a>
 
+                </article>
+
+                <article class="reviews" id="reviews">
+                    <h2 class="reviews__title section__title section__title-white">Отзывы наших
+                        партнеров
+                    </h2>
+
+                    <div class="swiper-container">
+                        <ul class="reviews__list swiper-wrapper defaultSlider__list">
+                            <li class="reviews__item swiper-slide defaultSlider__list_item">
+                                <div class="reviews__item_info">
+                                    <img src="./img/photos/review__1.jpg" alt="reviews avatar" width=70 height=70
+                                        class="reviews__item_info_img">
+                                    <span class="reviews__item_info_name">Дмитрий
+                                        Казыкалевич</span>
+                                    <span class="reviews__item_info_location">Украина, Киев</span>
+                                </div>
+
+                                <div class="reviews__item_descr">
+                                    <p class="reviews__item_descr_text defaultText">
+                                        В интернете развиваюсь с середины 2019 года. После чего познакомился с командой
+                                        Crypto Kings, прошел уроки обучения личностного роста, аффирмации, и многое
+                                        другое.
+                                        Следующим этапом в развитии стало активное построение своей структуры, развитие
+                                        своего личного бренда, репутации. Благодарен команде Crypto Kings.
+                                    </p>
+
+                                    <ul class="social__list">
+                                        <li class="social__list__item">
+                                            <a href="#" class="social__list__item_link" rel="noopener"></a>
+                                        </li>
+                                        <li class="social__list__item">
+                                            <a href="#" class="social__list__item_link" rel="noopener"></a>
+                                        </li>
+                                        <li class="social__list__item">
+                                            <a href="#" class="social__list__item_link" rel="noopener"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="reviews__item_video">Смотреть видео отзыв</a>
+                            </li>
+                            <li class="reviews__item swiper-slide defaultSlider__list_item">
+                                <div class="reviews__item_info">
+                                    <img src="./img/photos/review__1.jpg" alt="reviews avatar" width=70 height=70
+                                        class="reviews__item_info_img">
+                                    <span class="reviews__item_info_name">Дмитрий
+                                        Казыкалевич</span>
+                                    <span class="reviews__item_info_location">Украина, Киев</span>
+                                </div>
+
+                                <div class="reviews__item_descr">
+                                    <p class="reviews__item_descr_text defaultText">
+                                        В интернете развиваюсь с середины 2019 года. После чего познакомился с командой
+                                        Crypto Kings, прошел уроки обучения личностного роста, аффирмации, и многое
+                                        другое.
+                                        Следующим этапом в развитии стало активное построение своей структуры, развитие
+                                        своего личного бренда, репутации. Благодарен команде Crypto Kings.
+                                    </p>
+
+                                    <ul class="social__list">
+                                        <li class="social__list__item">
+                                            <a href="#" class="social__list__item_link" rel="noopener"></a>
+                                        </li>
+                                        <li class="social__list__item">
+                                            <a href="#" class="social__list__item_link" rel="noopener"></a>
+                                        </li>
+                                        <li class="social__list__item">
+                                            <a href="#" class="social__list__item_link" rel="noopener"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="reviews__item_video">Смотреть видео отзыв</a>
+                            </li>
+                        </ul>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </article>
             </div>
         </section>
 
-
-        <section class="news">
+        <section class="news" id="news">
             <div class="container">
                 <h2 class="profit__title section__title section__title-purple">Новости Crypto Kings</h2>
 
-                <p class="profit__subtitle section__subtitle section__subtitle-left">Будьте в курсе наших событий, следите за нашими новстями</p>
+                <p class="profit__subtitle section__subtitle section__subtitle-left">Будьте в курсе наших событий,
+                    следите за нашими новстями</p>
 
-                <div class="swiper-container">
+                <div class="swiper-container-multiple">
                     <ul class="news__list swiper-wrapper defaultSlider__list">
                         <li class="news__list_item swiper-slide defaultSlider__list_item">
-                            <img src="./img/photos/news__1.jpg" alt="news__img" class="news__list_item_img defaultSlider__list_item_img">
+                            <img src="./img/photos/news__1.jpg" alt="news__img"
+                                class="news__list_item_img defaultSlider__list_item_img">
 
                             <div class="news__list_item_container defaultSlider__list_item_container">
-                                <h4 class="news__list_item_title defaultSlider__list_item_title">Место для заголовка 
+                                <h4 class="news__list_item_title defaultSlider__list_item_title">Место для заголовка
                                     события скорее
                                     всего в несколько строк</h4>
                                 <p class="news__list_item_date defaultSlider__list_item_date">26.04.2020</p>
-                                <p class="news__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                                <p class="news__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie
+                                    eget. Pellentesque dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio,
+                                    sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit
+                                    turpis, condimentum rhoncus mauris molestie eget. </p>
                             </div>
                         </li>
                         <li class="news__list_item swiper-slide defaultSlider__list_item">
-                            <img src="./img/photos/news__2.jpg" alt="news__img" class="news__list_item_img defaultSlider__list_item_img">
+                            <img src="./img/photos/news__1.jpg" alt="news__img"
+                                class="news__list_item_img defaultSlider__list_item_img">
 
                             <div class="news__list_item_container defaultSlider__list_item_container">
-                                <h4 class="news__list_item_title">Место для заголовка 
+                                <h4 class="news__list_item_title defaultSlider__list_item_title">Место для заголовка
                                     события скорее
                                     всего в несколько строк</h4>
-                                <p class="news__list_item_date">26.04.2020</p>
-                                <p class="news__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                                <p class="news__list_item_date defaultSlider__list_item_date">26.04.2020</p>
+                                <p class="news__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie
+                                    eget. Pellentesque dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio,
+                                    sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit
+                                    turpis, condimentum rhoncus mauris molestie eget. </p>
                             </div>
                         </li>
                         <li class="news__list_item swiper-slide defaultSlider__list_item">
-                            <img src="./img/photos/news__1.jpg" alt="news__img" class="news__list_item_img defaultSlider__list_item_img">
+                            <img src="./img/photos/news__1.jpg" alt="news__img"
+                                class="news__list_item_img defaultSlider__list_item_img">
 
                             <div class="news__list_item_container defaultSlider__list_item_container">
-                                <h4 class="news__list_item_title">Место для заголовка 
+                                <h4 class="news__list_item_title defaultSlider__list_item_title">Место для заголовка
                                     события скорее
                                     всего в несколько строк</h4>
-                                <p class="news__list_item_date">26.04.2020</p>
-                                <p class="news__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                                <p class="news__list_item_date defaultSlider__list_item_date">26.04.2020</p>
+                                <p class="news__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie
+                                    eget. Pellentesque dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio,
+                                    sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit
+                                    turpis, condimentum rhoncus mauris molestie eget. </p>
                             </div>
                         </li>
                     </ul>
@@ -393,7 +468,7 @@
             </div>
         </section>
 
-        <section class="faq">
+        <section class="faq" id="faq">
             <div class="container">
                 <h2 class="faq__title section__title section__title-purple">FAQ</h2>
 
@@ -401,81 +476,184 @@
 
                 <ul class="faq__list">
                     <li class="faq__list_item">
-                        <p class="faq__list_item_title">Lorem ipsum dolor sit 
-                            amet, consectetur 
+                        <p class="faq__list_item_title">Lorem ipsum dolor sit
+                            amet, consectetur
                             adipiscing elit? </p>
-                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque
+                            dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor
+                            imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris
+                            molestie eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                            suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae
+                            nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor imperdiet
+                            sagittis. Nullam dolor erat, semper blandit non.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis,
+                            condimentum rhoncus mauris molestie eget. </p>
                     </li>
                     <li class="faq__list_item">
-                        <p class="faq__list_item_title">Lorem ipsum dolor sit 
-                            amet, consectetur 
+                        <p class="faq__list_item_title">Lorem ipsum dolor sit
+                            amet, consectetur
                             adipiscing elit? </p>
-                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque
+                            dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor
+                            imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris
+                            molestie eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                            suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae
+                            nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor imperdiet
+                            sagittis. Nullam dolor erat, semper blandit non.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis,
+                            condimentum rhoncus mauris molestie eget. </p>
                     </li>
                     <li class="faq__list_item">
-                        <p class="faq__list_item_title">Lorem ipsum dolor sit 
-                            amet, consectetur 
+                        <p class="faq__list_item_title">Lorem ipsum dolor sit
+                            amet, consectetur
                             adipiscing elit? </p>
-                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque
+                            dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor
+                            imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris
+                            molestie eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                            suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae
+                            nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor imperdiet
+                            sagittis. Nullam dolor erat, semper blandit non.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis,
+                            condimentum rhoncus mauris molestie eget. </p>
                     </li>
                     <li class="faq__list_item">
-                        <p class="faq__list_item_title">Lorem ipsum dolor sit 
-                            amet, consectetur 
+                        <p class="faq__list_item_title">Lorem ipsum dolor sit
+                            amet, consectetur
                             adipiscing elit? </p>
-                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque
+                            dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor
+                            imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris
+                            molestie eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                            suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae
+                            nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor imperdiet
+                            sagittis. Nullam dolor erat, semper blandit non.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis,
+                            condimentum rhoncus mauris molestie eget. </p>
                     </li>
                     <li class="faq__list_item">
-                        <p class="faq__list_item_title">Lorem ipsum dolor sit 
-                            amet, consectetur 
+                        <p class="faq__list_item_title">Lorem ipsum dolor sit
+                            amet, consectetur
                             adipiscing elit? </p>
-                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque
+                            dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor
+                            imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris
+                            molestie eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                            suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae
+                            nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor imperdiet
+                            sagittis. Nullam dolor erat, semper blandit non.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis,
+                            condimentum rhoncus mauris molestie eget. </p>
                     </li>
                     <li class="faq__list_item">
-                        <p class="faq__list_item_title">Lorem ipsum dolor sit 
-                            amet, consectetur 
+                        <p class="faq__list_item_title">Lorem ipsum dolor sit
+                            amet, consectetur
                             adipiscing elit? </p>
-                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                        <p class="faq__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque
+                            dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor
+                            imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris
+                            molestie eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                            suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae
+                            nulla lacinia tempor. Nam varius faucibus odio, sit amet tristique tortor imperdiet
+                            sagittis. Nullam dolor erat, semper blandit non.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis,
+                            condimentum rhoncus mauris molestie eget. </p>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <section class="events">
+        <section class="events" id="events">
             <div class="container">
                 <h2 class="faq__title section__title section__title-purple">Наши мероприятия</h2>
 
-                <p class="faq__subtitle section__subtitle section__subtitle-left">Мы часто проводи различные   ивенты и мероприятия</p>
+                <p class="faq__subtitle section__subtitle section__subtitle-left">Мы часто проводи различные ивенты и
+                    мероприятия</p>
 
-                <div class="swiper-container">
+                <div class="swiper-container-multiple">
                     <ul class="events__list swiper-wrapper defaultSlider__list">
                         <li class="events__list_item swiper-slide defaultSlider__list_item">
-                            <img src="./img/photos/events__1.jpg" alt="news__img" class="events__list_item_img defaultSlider__list_item_img">
+                            <img src="./img/photos/events__1.jpg" alt="news__img"
+                                class="events__list_item_img defaultSlider__list_item_img">
 
                             <div class="events__list_item_container defaultSlider__list_item_container">
-                                <h4 class="events__list_item_title defaultSlider__list_item_title">Место для заголовка 
+                                <h4 class="events__list_item_title defaultSlider__list_item_title">Место для заголовка
                                     события скорее
                                     всего в несколько строк</h4>
-                                <p class="events__list_item_date defaultSlider__list_item_date">Дата проведения: 
+                                <p class="events__list_item_date defaultSlider__list_item_date">Дата проведения:
                                     21.12.2020</p>
-                                <p class="events__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                                <p class="events__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie
+                                    eget. Pellentesque dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio,
+                                    sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit
+                                    turpis, condimentum rhoncus mauris molestie eget. </p>
                             </div>
                         </li>
                         <li class="events__list_item swiper-slide defaultSlider__list_item">
-                            <img src="./img/photos/events__2.jpg" alt="news__img" class="events__list_item_img defaultSlider__list_item_img">
+                            <img src="./img/photos/events__2.jpg" alt="news__img"
+                                class="events__list_item_img defaultSlider__list_item_img">
 
                             <div class="events__list_item_container defaultSlider__list_item_container">
-                                <h4 class="events__list_item_title defaultSlider__list_item_title">Место для заголовка 
+                                <h4 class="events__list_item_title defaultSlider__list_item_title">Место для заголовка
                                     события скорее
                                     всего в несколько строк</h4>
-                                <p class="events__list_item_date defaultSlider__list_item_date">Дата проведения: 
+                                <p class="events__list_item_date defaultSlider__list_item_date">Дата проведения:
                                     21.12.2020</p>
-                                <p class="events__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. Pellentesque dapibus mi vitae nulla lacinia tempor.  Nam varius faucibus odio, sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie eget. </p>
+                                <p class="events__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie
+                                    eget. Pellentesque dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio,
+                                    sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit
+                                    turpis, condimentum rhoncus mauris molestie eget. </p>
+                            </div>
+                        </li>
+                        <li class="events__list_item swiper-slide defaultSlider__list_item">
+                            <img src="./img/photos/events__2.jpg" alt="news__img"
+                                class="events__list_item_img defaultSlider__list_item_img">
+
+                            <div class="events__list_item_container defaultSlider__list_item_container">
+                                <h4 class="events__list_item_title defaultSlider__list_item_title">Место для заголовка
+                                    события скорее
+                                    всего в несколько строк</h4>
+                                <p class="events__list_item_date defaultSlider__list_item_date">Дата проведения:
+                                    21.12.2020</p>
+                                <p class="events__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie
+                                    eget. Pellentesque dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio,
+                                    sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit
+                                    turpis, condimentum rhoncus mauris molestie eget. </p>
+                            </div>
+                        </li>
+                        <li class="events__list_item swiper-slide defaultSlider__list_item">
+                            <img src="./img/photos/events__2.jpg" alt="news__img"
+                                class="events__list_item_img defaultSlider__list_item_img">
+
+                            <div class="events__list_item_container defaultSlider__list_item_container">
+                                <h4 class="events__list_item_title defaultSlider__list_item_title">Место для заголовка
+                                    события скорее
+                                    всего в несколько строк</h4>
+                                <p class="events__list_item_date defaultSlider__list_item_date">Дата проведения:
+                                    21.12.2020</p>
+                                <p class="events__list_item_text defaultText">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Aenean euismod suscipit turpis, condimentum rhoncus mauris molestie
+                                    eget. Pellentesque dapibus mi vitae nulla lacinia tempor. Nam varius faucibus odio,
+                                    sit amet tristique tortor imperdiet sagittis. Nullam dolor erat, semper blandit non.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod suscipit
+                                    turpis, condimentum rhoncus mauris molestie eget. </p>
                             </div>
                         </li>
                     </ul>
@@ -493,14 +671,14 @@
             </a>
 
             <a href="#" class="footer__privacy">Политика конфиденциальности</a>
-            <p class="footer__info">2020  |  © Crypto Kings 
+            <p class="footer__info">2020 | © Crypto Kings
                 All rights reserved</p>
             <a class="footer__company" href="https://gagarinstudio.com.ua/">Разработка сайта
                 <img src="./img/photos/logo_gagrin.png" alt="gagarinstudio" class="footer__company_img">
             </a>
         </div>
     </footer>
-
+    <div class="overlay" id="overlay"></div>
     <script src="./assets/js/main.bundle.js"></script>
 </body>
 

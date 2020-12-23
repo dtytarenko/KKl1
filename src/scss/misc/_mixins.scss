@@ -22,13 +22,14 @@
   }
 }
 
-@mixin laptop {
-  @media screen and (min-width: 1100px) {
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
     @content;
   }
 }
 
-@mixin desktop {
+@mixin designDesktop {
   @media screen and (min-width: 1600px) {
     @content;
   }
@@ -63,4 +64,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate(0, 0) rotate(-90deg);
+  }
+  to {
+    transform: translate(0, 15px) rotate(-90deg);
+  }
 }

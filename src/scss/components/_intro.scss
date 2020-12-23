@@ -4,6 +4,11 @@
     background-size: cover;
     background-position: -140px 0px;
     background-repeat: no-repeat;
+    padding-top: 40px;
+
+    .container{
+        position: relative;
+    }
 
     @media screen and (min-width: 350px){
         background-position: -80px 0px;
@@ -19,6 +24,16 @@
 
     @include tablet{
         padding-top: 50px;
+        min-height: 1000px;
+    }
+
+    @include desktop{
+        background-image: url('../img/photos/intro__desktop.svg');
+        padding-top: 130px;
+    }
+
+    @include designDesktop{
+        max-height: 1046px;
     }
 
     .container{
@@ -42,6 +57,12 @@
             margin-bottom: 85px;
             width: 330px;
             height: 122px;
+        }
+
+        @include designDesktop{
+            width: 440px;
+            height: 162px;
+            margin-bottom: 96px;
         }
         
         .intro__logo_img{
@@ -71,6 +92,22 @@
             letter-spacing: 1.25px;
             white-space: initial;
             margin-bottom: 100px;
+        }
+
+        @include desktop{
+            font-size: 60px;
+            font-weight: 400;
+            line-height: 90px;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 90px;
+        }
+
+        @include designDesktop{
+            font-size: 70px;
+            letter-spacing: normal;
+            margin-bottom: 60px;
         }
 
         &::after{
@@ -109,6 +146,21 @@
             letter-spacing: 1.2px;
             margin-bottom: 85px;
         }
+
+        @include desktop{
+            font-size: 30px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            margin-bottom: 73px;
+            max-width: 811px;
+        }
+
+        @include designDesktop{
+            font-size: 40px;
+            letter-spacing: 2px;
+            max-width: 1082px;
+            margin-bottom: 92px;
+        }
     }
 
     .intro__button {
@@ -117,6 +169,76 @@
         @include tablet{
             margin-bottom: 241px;
             min-width: 240px;
+        }
+    }
+}
+
+.intro__button-scroll{
+    display: none;
+
+    @include tablet{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 100px;
+        transform: translate(0, 0%) rotate(-90deg);
+        background-color: transparent;
+        appearance: none;
+        animation: bounce 1s infinite alternate;
+
+        &::before{
+            content: '';
+            display: block;
+            background-image: url('../img/icons/scroll.png');
+            @include bgIcons;
+            width: 50px;
+            height: 50px;
+            transform: rotate(90deg);
+        }
+
+        &::after{
+            content: '';
+            display: block;
+            width: 3px;
+            height: 50px;
+            background-color: #261449;
+            position: absolute;
+            top: 50%;
+            left: 82px;
+            transform: translate(0, -50%) rotate(90deg);
+        }
+    }
+
+    @include desktop{
+        justify-content: center;
+        align-items: center;
+        right: 50px;
+        bottom: 145px;
+
+        &::after{
+            height: 40px;
+            left: 100%;
+        }
+    }
+
+    @include designDesktop {
+        bottom: 200px;
+    }
+
+    span{
+        display: none;
+
+        @include desktop{
+            display: block;
+            color: #261449;
+            font-family: $MontserratSemiBold;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2.8px;
+            margin-left: 15px;
+            margin-right: 30px;
         }
     }
 }
